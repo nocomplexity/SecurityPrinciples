@@ -1,6 +1,19 @@
 # Principles 
 ## Category Security
 
+###Address Privacy&#038;Security
+##### Statement
+Address Privacy & Security
+##### Rationale
+Information is power, as the old adage goes, and this is certainly true in the context of technology-enabled global development interventions. How information is collected, stored, analysed, shared, and used has serious implications for both the populations about whom data are being transmitted, and the organizations transmitting the data. This principle: Address Privacy &amp; Security provides a framework for considering how to protect user privacy and the security of data, devices, and tools.
+##### Implications
+<ul>
+	<li>Assess and mitigate risks to the security of users and their data.</li>
+	<li>Consider the context and needs for privacy of personally identifiable information when designing solutions and mitigate accordingly.</li>
+	<li>Ensure equity and fairness in co-creation, and protect the best interests of the end end-users.</li>
+</ul>
+
+
 ###Always consider the users
 ##### Statement
 Always consider the users
@@ -23,7 +36,7 @@ Asset protection and resilience
 ##### Rationale
 Consumer data, and the assets storing or processing it, should be protected against physical tampering, loss, damage or seizure.
 ##### Implications
-If this principle is not implemented, inappropriately protected consumer data could be compromised which may result in legal and regulatory sanction, or reputational damage. 
+If this principle is not implemented, inappropriately protected consumer data could be compromised which may result in legal and regulatory sanction, or reputational damage.
 
 
 ###Assume that external systems are insecure
@@ -42,7 +55,7 @@ An external domain is one that is not under your control. In general, external s
 Audit information provision to consumers
 ##### Rationale
 Consumers should be provided with the audit records they need to monitor access to their service and the data held within it. 
-If this principle is not implemented, consumers will not be able to detect and respond to inappropriate or malicious use of their service or data within reasonable timescales. 
+If this principle is not implemented, consumers will not be able to detect and respond to inappropriate or malicious use of their service or data within reasonable timescales.
 ##### Implications
 
 
@@ -58,7 +71,7 @@ Authentication is the process where a system establishes the validity of a trans
 
 ###Authorize after you authenticate
 ##### Statement
-Authorize after you authenticate. 
+Authorize after you authenticate.
 ##### Rationale
 Authorization should be conducted as an explicit check, and as necessary even after an initial authentication has been completed. Authorization depends not only on the privileges associated with an authenticated user, but also on the context of the request. The time of the request and the location of the requesting user may both need to be taken into account.
 ##### Implications
@@ -69,7 +82,7 @@ Although authorization begins only after authentication has occurred, this requi
 
 ###Avoid security by obscurity
 ##### Statement
-Security measurements should not be open and transparent.
+Security measurements should be open and transparent.
 ##### Rationale
 Assume attackers will have source code (also for closed source software).
 Assume attackers will have complete design and network topologies.
@@ -82,7 +95,7 @@ Security should always be tested by experts (open or not)
 ##### Statement
 Check the return value of all non-void functions, and check the validity of all function parameters.
 
-The return value of non-void functions must be checked by each calling function, and the validity of parameters must be checked inside each function. 
+The return value of non-void functions must be checked by each calling function, and the validity of parameters must be checked inside each function.
 ##### Rationale
 This is possibly the most frequently violated principle.In the strictest interpretation, this rule means that even the return value of printf statements and file close statements must be checked.
 A case can be made, though, that if the response to an error would rightfully be no different than the response to success, there is no point in checking a return value. This is often the case with calls to printf and close. In cases like these, it can be acceptable to explicitly cast the function return value to (void) -- thereby indicating that the programmer explicitly and not accidentally decides to ignore a return value. The rule is then only violated if the cast is missing.
@@ -114,9 +127,9 @@ Information technology exists in physical and logical locations, and boundaries 
 
 ###Compartmentalise
 ##### Statement
-Sub-systems will be partitioned logically and isolated using physical devices and/or security controls 
+Sub-systems will be partitioned logically and isolated using physical devices and/or security controls
 ##### Rationale
-In accordance with the Minimise Attack Surface and Defence in Depth principles, the Compartmentalise principle keeps a sub-system, or logically grouped set of sub-systems, relatively self-contained such that compromise of one will not imply the compromise of another. 
+In accordance with the Minimise Attack Surface and Defence in Depth principles, the Compartmentalise principle keeps a sub-system, or logically grouped set of sub-systems, relatively self-contained such that compromise of one will not imply the compromise of another.
 ##### Implications
 
 
@@ -125,7 +138,7 @@ In accordance with the Minimise Attack Surface and Defence in Depth principles, 
 ##### Statement
 Compile with all warnings enabled, in pedantic mode, and use one or more modern static source code analyzers.
 
-All code must be compiled, from the first day of development, with all compiler warnings enabled at the compiler's most pedantic setting. All code must compile with these setting without warnings. All code must be checked on each build with at least one, but preferably more than one, state-of-the-art static source code analyzer and should pass the analyses with zero warnings. 
+All code must be compiled, from the first day of development, with all compiler warnings enabled at the compiler's most pedantic setting. All code must compile with these setting without warnings. All code must be checked on each build with at least one, but preferably more than one, state-of-the-art static source code analyzer and should pass the analyses with zero warnings.
 ##### Rationale
 There are several very effective static source code analyzers on the market today, and quite a few freeware tools as well. There is no excuse for any serious software development effort not to make use of this technology. It should be considered routine practice, especially for critical software development. The rule of zero warnings applies even in cases where the compiler or the static analyzer gives an erroneous warning: if the compiler or the static analyzer gets confused, the code causing the confusion should be rewritten so that it becomes more trivially valid. Many have been caught in the assumption that a warning was likely invalid, only to realize much later that the report was in fact valid for less obvious reasons.
 Static analyzers originally had a bad reputation due to the limited capabilities of early versions (e.g., the early Unix tool <tt>lint</tt>). The early tools produced mostly invalid messages, but this is not the case for the current generation of commercial tools. The best static analyzers today are fast, and they produce selective and accurate messages.
@@ -207,10 +220,10 @@ Data in transit protection
 ##### Rationale
 Consumer data transiting networks should be adequately protected against tampering and eavesdropping via a combination of network protection and encryption.
 ##### Implications
-If this principle is not implemented, then the integrity or confidentiality of the data may be compromised whilst in transit. 
+If this principle is not implemented, then the integrity or confidentiality of the data may be compromised whilst in transit.
 
 
-###Data Security
+###Data is always protected
 ##### Statement
 Data is protected from unauthorized use and disclosure. In addition to the traditional aspects of data classification, this includes, but is not limited to, protection of per-decisional, sensitive, source selection-sensitive, and proprietary information.
 ##### Rationale
@@ -235,13 +248,12 @@ Systems, data, and technologies must be protected from unauthorized access and m
 
 ###Declare data objects at the smallest possible level of scope
 ##### Statement
-Declare data objects at the smallest possible level of scope. 
-
+Declare data objects at the smallest possible level of scope.
 ##### Rationale
-Basic principle of data-hiding. Clearly if an object is not in scope, its value cannot be referenced or corrupted. Similarly, if an erroneous value of an object has to be diagnosed, the fewer the number of statements where the value could have been assigned; the easier it is to diagnose the problem. The rule discourages the re-use of variables for multiple, incompatible purposes, which can complicate fault diagnosis. 
+Basic principle of data-hiding. Clearly if an object is not in scope, its value cannot be referenced or corrupted. Similarly, if an erroneous value of an object has to be diagnosed, the fewer the number of statements where the value could have been assigned; the easier it is to diagnose the problem. The rule discourages the re-use of variables for multiple, incompatible purposes, which can complicate fault diagnosis.
 ##### Implications
 Data should always be declared at the start of the scope in which it is used: for file scope, the declarations go at the top of the source file (never in a header file); for function scope, the declaration goes at the top of the function body; for block scope, at the start of the block. This means that declarations should not be placed at random places in the code, e.g., that the point of first use.
-Data objects only used in one file should be declared file <i>static</i>. 
+Data objects only used in one file should be declared file <i>static</i>.
 
 
 ###Defense in depth
@@ -260,7 +272,6 @@ Implement multiple defense mechanism
 Design and implement audit mechanisms to detect unauthorized use and to support incident investigations
 ##### Rationale
 Organizations should monitor, record, and periodically review audit logs to identify unauthorized use and to ensure system resources are functioning properly. In some cases, organizations may be required to disclose information obtained through auditing mechanisms to appropriate third parties.
-
 ##### Implications
 
 
@@ -295,6 +306,22 @@ The migration of previous users (and/or the correct coexistence of the local and
 Make security design modular and flexible from the start.
 
 
+###Design reviews
+##### Statement
+All architectures and designs must be reviewed. Minimal on security aspects and potential risks.
+Also to determine if all (security and privacy) principles and requirements are followed.
+##### Rationale
+Integrating security into the design phase saves money and time. Conduct a risk review with security professionals and threat model the application to identify key risks and to improve product and processes under development. This helps you integrate appropriate countermeasures into the design and architecture of the application. Improving architecture and design is by far the best option (time,cost etc) for dealing with security and privacy.
+##### Implications
+Organize or make use of a structured review process to benefit from review.
+
+SME (Subject Matter Experts) must be available for doing reviews.
+
+Reserve time to improve architectures and designs or to improve code.
+
+&nbsp;
+
+
 ###Design security to allow for regular adoption of new technology
 ##### Statement
 Design security to allow for regular adoption of new technology, including a secure and logical technology upgrade process.
@@ -322,7 +349,6 @@ Every security mechanism should support a security service or set of services, a
 Only implement security measurements when needed.
 
 
-
 ###Don’t trust infrastructure
 ##### Statement
 Underlaying infrastructure cannot be assumed safe.
@@ -334,11 +360,12 @@ Sandbox model /Jericho model needed.
 Layered defense easily possible
 
 
-###Don’t trust services
+###Don’t trust services (from others)
 ##### Statement
-Services from other should never (ever) be trusted.
+Services from others (departments, companies) should never (ever) be trusted.
 ##### Rationale
-Security design should protect against services use of other layers or applications (also SAAS services)
+Security design should protect against services use of other layers or applications (also SAAS services).
+Systems or sub-systems outside the bounds of a receiving component must never be trusted implicitly.
 ##### Implications
 Every input/output and given by external services must be validated.
 Authentication, authorization can be needed.
@@ -386,12 +413,11 @@ Although a system may be powered down, critical information still resides on the
 Ensure that developers are trained in how to develop secure software.
 ##### Rationale
 It is unwise to assume that developers know how to develop secure software. Therefore, ensure that developers are adequately trained in the development of secure software before developing the system. This includes application of engineering disciplines to design, development, configuration control, and integration and testing.
-
 ##### Implications
-Training cost (permanent) for all staff involved in maintaining the IT assets of a company. 
+Training cost (permanent) for all staff involved in maintaining the IT assets of a company.
 
 
-###Establish a sound security policy as the “foundation” for design.
+###Establish a sound security policy as the“foundation” for design.
 ##### Statement
 Establish a sound security policy as the “foundation” for design.
 ##### Rationale
@@ -416,7 +442,7 @@ External interface protection
 ##### Rationale
 All external or less trusted interfaces of the service should be identified and have appropriate protections to defend against attacks through them. 
 
-If this principle is not implemented, interfaces could be subverted by attackers in order to gain access to the service or data within it. 
+If this principle is not implemented, interfaces could be subverted by attackers in order to gain access to the service or data within it.
 ##### Implications
 
 
@@ -426,12 +452,11 @@ If this principle is not implemented, interfaces could be subverted by attackers
 Fail Safe Defaults
 ##### Rationale
 A mechanism that, in the event of failure, responds in a way that will cause no harm, or at least a minimum of harm, to other devices or danger to personnel.
-
 ##### Implications
 
 
 
-###Fail-safe defaults
+###Fail-safe default settings for security and access
 ##### Statement
 Fail-safe default settings for security and access. So in case of error security should not be compromised.
 ##### Rationale
@@ -452,10 +477,9 @@ An information domain is a set of active entities (person, process, or devices) 
 ###Governance framework
 ##### Statement
 A Governance framework is required for service providers of Cloud hosting.
-
 ##### Rationale
 The service provider should have a security governance framework that coordinates and directs their overall approach to the management of the service and information within it.
-If this principle is not implemented, any procedural, personnel, physical and technical controls in place will not remain effective when responding to changes in the service and to threat and technology developments. 
+If this principle is not implemented, any procedural, personnel, physical and technical controls in place will not remain effective when responding to changes in the service and to threat and technology developments.
 ##### Implications
 
 
@@ -477,7 +501,6 @@ Many errors reoccur with disturbing regularity - errors such as buffer overflows
 ##### Implications
 Use OWASP top 10 checklist
 Use proven security testtools that are regular updated.
-
 
 
 ###Identify potential trade-offs between reducing risk and increased costs and decrease in other aspects of operational effectiveness.
@@ -537,8 +560,6 @@ Isolation measurements must be tested regularly.
 An audit report from a third party is required (in case of cloud sourcing).
 
 
-
-
 ###Least common mechanism
 ##### Statement
 Least common mechanism
@@ -563,9 +584,9 @@ This principle has impact on the system, software components, but also on proced
 ##### Statement
 Limit the use of pointers. Use no more than N levels of dereferencing (star operators) per expression. A strict value for N=1, but in some cases using N=2 can be justified.
 
-Pointer dereference operations may not be hidden in macro definitions or inside typedef declarations. The use of function pointers should be restricted to simple cases. 
+Pointer dereference operations may not be hidden in macro definitions or inside typedef declarations. The use of function pointers should be restricted to simple cases.
 ##### Rationale
-Pointers are easily misused, even by experienced programmers. They can make it hard to follow or analyze the flow of data in a program, especially by tool-based static analyzers. Function pointers, similarly, can seriously restrict the types of checks that can be performed by static analyzers and should only be used if there is a strong justification for their use, and ideally alternate means are provided to assist tool-based checkers determine flow of control and function call hierarchies. For instance, if function pointers are used, it can become impossible for a tool to prove absence of recursion, so alternate guarantees would have to be provided to make up for this loss in analytical capabilities. 
+Pointers are easily misused, even by experienced programmers. They can make it hard to follow or analyze the flow of data in a program, especially by tool-based static analyzers. Function pointers, similarly, can seriously restrict the types of checks that can be performed by static analyzers and should only be used if there is a strong justification for their use, and ideally alternate means are provided to assist tool-based checkers determine flow of control and function call hierarchies. For instance, if function pointers are used, it can become impossible for a tool to prove absence of recursion, so alternate guarantees would have to be provided to make up for this loss in analytical capabilities.
 ##### Implications
 It should be possible for a static analyzer to determine in all cases which function is being called, if the call is made through a function pointer. It may be acceptable to allow cases where the number of possible functions that may be called is larger than one, provided it does not affect the precision of the code analysis itself. This means that it can depend on the capabilities of a specific static analyzer what liberties can be taken with the use of function pointers.
 Additionally, though, it is wise to keep function pointer use to a minimum, and to restrict to simple cases, to make sure that also humans can determine accurately and with modest effort which functions may be evoked.
@@ -577,7 +598,7 @@ Limit the use of the preprocessor to file inclusion and simple macros.
 
 The use of the preprocessor must be limited to the inclusion of header files and simple macro definitions. Token pasting, variable argument lists (ellipses), and recursive macro calls are not permitted.
 All macros must expand into complete syntactic units.
-The use of conditional compilation directives should be restricted to the prevention of duplicate file inclusion in header files. 
+The use of conditional compilation directives should be restricted to the prevention of duplicate file inclusion in header files.
 ##### Rationale
 The C preprocessor is a powerful obfuscation tool that can destroy code clarity and befuddle many text based checkers. The effect of constructs in unrestricted preprocessor code can be extremely hard to decipher, even with a formal language definition in hand. In a new implementation of the C preprocessor, developers often have to resort to using earlier implementations as the referee for interpreting complex defining language in the C standard. The rationale for the caution against conditional compilation is equally important. Note that with just ten conditional compilation directives, there could be up to 2^10 (i.e., 1024) possible versions of the code, each of which would have to be tested -- causing a significant increase in the required test effort.
 ##### Implications
@@ -595,8 +616,7 @@ Private data (for example, passwords) is not logged.
 Protecting secure logs is expensive.
 ##### Implications
 A clear message level must be built in to notify exactly what the cause of error is.
-Reduced risk profile on system logs. 
-
+Reduced risk profile on system logs.
 
 
 ###Minimize secrets
@@ -619,23 +639,12 @@ Security measures include people, operations, and technology. Where technology i
 
 ###Open design
 ##### Statement
-Open design
+Open design.
+The security of physical products, machines and systems should not depend on secrecy of the design and implementation.
 ##### Rationale
 Baran (1964) argued persuasively in an unclassified RAND report that secure systems, including cryptographic systems, should have unclassified designs. This reflects recommendations by Kerckhoffs (1883) as well as Shannon’s maxim: “The enemy knows the system” (Shannon, 1948). Even the NSA, which resisted open crypto designs for decades, now uses the Advanced Encryption Standard to encrypt classified information.
 ##### Implications
 
-
-
-###Open Design
-##### Statement
-Open Design
-##### Rationale
-The security of physical products, machines and systems should not depend on secrecy of the design and implementation.
-
-##### Implications
-The security design should be open for improvement for everyone interested. Consider using an OSS solution.
-
-&nbsp;
 
 
 ###Operational security
@@ -656,7 +665,7 @@ Personnel security
 ##### Rationale
 Service provider staff should be subject to personnel security screening and security education for their role.
 
-If this principle is not implemented, the likelihood of accidental or malicious compromise of consumer data by service provider personnel is increased. 
+If this principle is not implemented, the likelihood of accidental or malicious compromise of consumer data by service provider personnel is increased.
 ##### Implications
 
 
@@ -736,7 +745,7 @@ Secure use of the service by the consumer
 ##### Rationale
 Consumers have certain responsibilities when using a cloud service in order for this use to remain secure, and for their data to be adequately protected.
 
-If this principle is not implemented, the security of cloud services and the data held within them can be undermined by poor use of the service by consumers. 
+If this principle is not implemented, the security of cloud services and the data held within them can be undermined by poor use of the service by consumers.
 ##### Implications
 
 
@@ -770,7 +779,6 @@ Software code must be scanned on secrets (e.g. configuration details, passwords)
 ###Sensitive data must be identified
 ##### Statement
 Sensitive data must be identified and it should be defined how the data is handled.
-
 ##### Rationale
 Data sets do not exist only at rest, but in transit between components within a single system and between organizations. As data sets transit between systems, they may cross multiple trust boundaries. Identifying these boundaries and rectifying them with data protection policies is an essential design activity. Trust is just as tricky as data sensitivity, and the notion of trust enclaves is likely to dominate security conversations in the next decade.
 ##### Implications
@@ -781,9 +789,9 @@ Policy requirements and data sensitivity can change over time as the business cl
 ##### Statement
 Separation between consumers
 ##### Rationale
-Separation should exist between different consumers of the service to prevent one malicious or compromised consumer from affecting the service or data of another.If this principle is not implemented, service providers can not prevent a consumer of the service affecting the confidentiality or integrity of another consumer’s data or service. 
+Separation should exist between different consumers of the service to prevent one malicious or compromised consumer from affecting the service or data of another.If this principle is not implemented, service providers can not prevent a consumer of the service affecting the confidentiality or integrity of another consumer’s data or service.
 ##### Implications
-Sharing services between customers by Cloud Service Providers (CSP's) requires strict separation within the security model. 
+Sharing services between customers by Cloud Service Providers (CSP's) requires strict separation within the security model.
 
 
 ###Separation of privilege
@@ -801,10 +809,8 @@ Session lifetime is limited. Also for cookies.
 ##### Rationale
 Security
 System performance
-
 ##### Implications
 All transactions must be completed within max session time.
- 
 
 
 ###Strive for operational ease of use.
@@ -883,9 +889,9 @@ essential.
 
 ###Use standard solutions
 ##### Statement
-Existing security controls should be given preference over custom solutions 
+Existing security controls should be given preference over custom solutions
 ##### Rationale
-Secure software is hard. The largest, most experienced and deep pocketed software developers in the world, both commercial and open source, are constantly patching security vulnerabilities in software that has been in the wild and hardened over many years. It is arguably implausible for developers of a particular system to invent and deliver a security solution that is as good as or better than an off-the-shelf solution. Add to that the need to fully and clearly document how the custom security solution works for maintainers of the software and new developers to comprehend, maintain and extend the solution and the cost of training up those resources. 
+Secure software is hard. The largest, most experienced and deep pocketed software developers in the world, both commercial and open source, are constantly patching security vulnerabilities in software that has been in the wild and hardened over many years. It is arguably implausible for developers of a particular system to invent and deliver a security solution that is as good as or better than an off-the-shelf solution. Add to that the need to fully and clearly document how the custom security solution works for maintainers of the software and new developers to comprehend, maintain and extend the solution and the cost of training up those resources.
 ##### Implications
 
 
